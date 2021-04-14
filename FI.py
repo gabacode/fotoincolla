@@ -14,12 +14,10 @@ e ne interpreta il testo in formato txt.
 
 if not os.path.isdir("input"):
     os.makedirs("input")
-elif not os.path.isdir("scans"):
+if not os.path.isdir("scans"):
     os.makedirs("scans")
-elif not os.path.isdir("output"):
+if not os.path.isdir("output"):
     os.makedirs("output")
-else:
-    pass
 
 def fi(file,output):
     pdf_file = fitz.open(file)
