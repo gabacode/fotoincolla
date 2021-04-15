@@ -23,3 +23,13 @@ Demo Output:
 ```
 Ordinanza-41-14042021.txt
 ```
+# Accuratezza
+Qualora si stia cercando di leggere un'ordinanza scritta in Italiano, sarebbe meglio utilizzare un trained model per questo linguaggio.
+Per farlo, scaricare il file [ita.traineddata](https://github.com/tesseract-ocr/tessdata/blob/master/ita.traineddata), spostarlo in una cartella, ad esempio: "/home/user/lib/tessdata/languages", e associare la cartella tessdata alla variabile di sistema TESSDATA_PREFIX
+```
+export TESSDATA_PREFIX=/home/user/lib/tessdata
+```
+A quel punto è possibile utilizzare l'argomento lang nella funzione di pytesseract, ad esempio:
+```
+text = pytesseract.image_to_string(img, lang="ita")
+```
